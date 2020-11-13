@@ -1,0 +1,24 @@
+{
+  "name": "csg-device",
+  "version": "1.0.0",
+  "main": "dist/csg-device.js",
+  "module": "dist/csg-device.esm.js",
+  "browser": "dist/csg-device.umd.js",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^11.0.1",
+    "@rollup/plugin-node-resolve": "^7.0.0",
+    "rollup": "^1.29.0"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "test": "node test/test.js",
+    "pretest": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "uuid": "^8.3.1"
+  }
+}
