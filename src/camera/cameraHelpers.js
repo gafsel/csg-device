@@ -72,22 +72,22 @@ export function handleSuccess(stream) {
 
 export function handleError(error, errorCallback) {
   let cameraError = undefined;
-  if (
-    error.name === 'OverconstrainedError' ||
-    error.name === 'ConstraintNotSatisfiedError'
-  ) {
-    cameraError = CAMERA_ERRORS.constraintNotSatisfied;
-  } else if (
-    error.name === 'NotAllowedError' ||
-    error.name === 'PermissionDeniedError'
-  ) {
-    cameraError = CAMERA_ERRORS.permissionDenied;
-  } else if (
-    error.name === 'QuotaExceededError'
-      ) {
-    cameraError = CAMERA_ERRORS.quotaExceededError;
+  switch (error.name) {
+    case 'OverconstrainedError':
+    case 'ConstraintNotSatisfiedError':
+      cameraError = CAMERA_ERRORS.constraintNotSatisfied;
+      break;
+    case 'NotAllowedError':
+    case 'PermissionDeniedError':
+      cameraError = CAMERA_ERRORS.permissionDenied;
+      break;
+    case 'QuotaExceededError':
+      cameraError = CAMERA_ERRORS.quotaExceededError;
+      break;
   }
+
   executeSafeErrorCallback(errorCallback, cameraError);
+
   return cameraError;
 }
 

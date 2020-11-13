@@ -1,2 +1,2 @@
-export { default as deviceRegister } from './deviceHeadersAPI';
+export { default as deviceHeaders } from './deviceHeaders';
 export { default as addDeviceInfo } from './deviceInfo';

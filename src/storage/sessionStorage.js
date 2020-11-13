@@ -1,16 +1,16 @@
-function setSessionItem(key, value) {
+const setSessionItem = (key, value) => {
     window.sessionStorage.setItem(key, value);
 }
 
-function getSessionItem(key) {
+const getSessionItem = (key) => {
     return window.sessionStorage.getItem(key);
 }
 
-function removeSessionItem(key) {
+const removeSessionItem = (key) => {
     window.sessionStorage.removeItem(key);
 }
 
-function hasSessionKey(key) {
+const hasSessionKey = (key) => {
     let has = false;
     if (key !== undefined && window.sessionStorage.getItem(key) !== null) {
         has = true;
@@ -18,7 +18,7 @@ function hasSessionKey(key) {
     return has;
 }
 
-function setSerializableItem(key, value) {
+const setSerializableItem = (key, value) => {
     let serializedValue = null;
 
     if (value !== undefined) {
@@ -28,7 +28,7 @@ function setSerializableItem(key, value) {
     sessionStorage.setItem(key, serializedValue);
 }
 
-function getSerializableItem(key) {
+const getSerializableItem = (key) => {
     let value = null;
 
     if (key !== undefined) {

@@ -5,14 +5,25 @@
   "module": "dist/csg-device.esm.js",
   "browser": "dist/csg-device.umd.js",
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^11.0.1",
-    "@rollup/plugin-node-resolve": "^7.0.0",
-    "rollup": "^1.29.0"
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@jest/globals": "^26.6.2",
+    "@rollup/plugin-babel": "^5.2.1",
+    "@rollup/plugin-commonjs": "^16.0.0",
+    "@rollup/plugin-node-resolve": "^10.0.0",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "^24.9.0",
+    "canvas": "^2.6.1",
+    "concurrently": "4.1.2",
+    "jest": "24.9.0",
+    "jest-canvas-mock": "^2.3.0",
+    "rollup": "1.32.1",
+    "rollup-plugin-uglify": "^6.0.4"
   },
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "test": "node test/test.js",
+    "test": "jest",
     "pretest": "npm run build"
   },
   "files": [

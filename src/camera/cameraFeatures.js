@@ -8,7 +8,7 @@ import {
   requestCameras,
 } from './cameraHelpers';
 
-async function applyCamera(camera, errorCallback, successCallback) {
+const applyCamera = async (camera, errorCallback, successCallback) => {
   try {
     closeCamera();
     const result = await getAsBestResolution(camera, errorCallback);
@@ -21,9 +21,9 @@ async function applyCamera(camera, errorCallback, successCallback) {
   } catch (error) {
     handleError(error, errorCallback);
   }
-}
+};
 
-async function openCamera(camerasCallback, errorCallback) {
+const openCamera = async (camerasCallback, errorCallback) => {
   try {
     const cameras = await requestCameras(errorCallback);
     if (cameras.front) {
@@ -33,9 +33,9 @@ async function openCamera(camerasCallback, errorCallback) {
   } catch (error) {
     handleError(error, errorCallback);
   }
-}
+};
 
-function closeCamera() {
+const closeCamera = () => {
   const video = getVideoElement();
   if (video && video.srcObject) {
     video.srcObject.getTracks().forEach(function(track) {
@@ -43,9 +43,9 @@ function closeCamera() {
     });
     video.srcObject = undefined;
   }
-}
+};
 
-function takeCameraShot(shotId, successCallback, errorCallback) {
+const takeCameraShot = (shotId, successCallback, errorCallback) => {
   try {
     const snapshot = createSnapshot(errorCallback);
     if (snapshot) {
@@ -57,7 +57,7 @@ function takeCameraShot(shotId, successCallback, errorCallback) {
   } catch (error) {
     handleError(error, errorCallback);
   }
-}
+};
 
 const cameraFeatures = {
   open: openCamera,

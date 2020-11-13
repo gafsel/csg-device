@@ -1,5 +1,5 @@
 import * as uuid from 'uuid';
-import { durableStorage } from '../storage';
+import { durableStorage } from '../storage/index';
 
 const DEVICE_ID_KEY = 'gcs_al_device';
 const DUMMY_ID = '0a0a0a0a-0a0a-0a0a-0a0a-0a0a0a0a0a0a';
