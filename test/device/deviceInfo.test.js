@@ -1,4 +1,4 @@
-import {default as deviceInfo} from './deviceInfo';
+import {default as deviceInfo} from '../../src/device/deviceInfo';
 
 test('device info is a Base64 encoded JSON', async () => {
     const base64 = await deviceInfo.buildDeviceInfo();

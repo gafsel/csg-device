@@ -1,4 +1,4 @@
-import {getDeviceId} from "./deviceStorage";
+import {getDeviceId} from "../../src/device/deviceStorage";
 
 test('device id is uuid v4', async () => {
     expect(getDeviceId()).toMatch(/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/);

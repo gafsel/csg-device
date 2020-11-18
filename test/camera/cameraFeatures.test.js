@@ -1,12 +1,12 @@
-import {createSnapshot, handleError} from "./cameraHelpers";
-import {addCameraShot} from "./cameraStorage";
+import {createSnapshot, handleError} from "../../src/camera/cameraHelpers";
+import {addCameraShot} from "../../src/camera/cameraStorage";
 
-jest.mock('./cameraHelpers');
-jest.mock('./cameraStorage');
+jest.mock('../../src/camera/cameraHelpers');
+jest.mock('../../src/camera/cameraStorage');
 
 test('open works', async () => {
-    const cameraFeatures = require('./cameraFeatures');
-    const {requestCameras, getAsBestResolution} = require('./cameraHelpers');
+    const cameraFeatures = require('../../src/camera/cameraFeatures');
+    const {requestCameras, getAsBestResolution} = require('../../src/camera/cameraHelpers');
 
     const camerasCallback = jest.fn();
     const errorCallback = jest.fn();
@@ -37,8 +37,8 @@ test('open works', async () => {
 });
 
 test('open fails', async () => {
-    const cameraFeatures = require('./cameraFeatures');
-    const {requestCameras, getAsBestResolution, handleError} = require('./cameraHelpers');
+    const cameraFeatures = require('../../src/camera/cameraFeatures');
+    const {requestCameras, getAsBestResolution, handleError} = require('../../src/camera/cameraHelpers');
 
     const camerasCallback = jest.fn();
     const errorCallback = jest.fn();
@@ -56,8 +56,8 @@ test('open fails', async () => {
 });
 
 test('close works', async () => {
-    const cameraFeatures = require('./cameraFeatures');
-    const {getVideoElement} = require('./cameraHelpers');
+    const cameraFeatures = require('../../src/camera/cameraFeatures');
+    const {getVideoElement} = require('../../src/camera/cameraHelpers');
 
     const tracks = [
         {
@@ -89,9 +89,9 @@ test('close works', async () => {
 });
 
 test('takeShot works', async () => {
-    const cameraFeatures = require('./cameraFeatures');
-    const {createSnapshot} = require('./cameraHelpers');
-    const {addCameraShot} = require('./cameraStorage');
+    const cameraFeatures = require('../../src/camera/cameraFeatures');
+    const {createSnapshot} = require('../../src/camera/cameraHelpers');
+    const {addCameraShot} = require('../../src/camera/cameraStorage');
 
     const testId = Math.random().toString();
     const testCaseSnapshot = 'snapshotTestCase' + Math.random();
@@ -117,9 +117,9 @@ test('takeShot works', async () => {
 });
 
 test('takeShot fails', async () => {
-    const cameraFeatures = require('./cameraFeatures');
-    const {createSnapshot, handleError} = require('./cameraHelpers');
-    const {addCameraShot} = require('./cameraStorage');
+    const cameraFeatures = require('../../src/camera/cameraFeatures');
+    const {createSnapshot, handleError} = require('../../src/camera/cameraHelpers');
+    const {addCameraShot} = require('../../src/camera/cameraStorage');
 
     const testId = Math.random().toString();
     const successCallback = jest.fn();

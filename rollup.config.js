@@ -1,10 +1,11 @@
 import pkg from './package.json';
 import resolve from '@rollup/plugin-node-resolve';
 import babel from '@rollup/plugin-babel';
+import minify from 'rollup-plugin-babel-minify';
 
 export default [
     {
-        input: 'src/main.js',
+        input: 'src/index.js',
         external: ['uuid'],
         output: {
             name: 'csg-device',
@@ -17,11 +18,12 @@ export default [
                 exclude: 'node_modules/**',
                 babelHelpers: 'bundled',
             }),
+            minify()
         ]
     },
 
     {
-        input: 'src/main.js',
+        input: 'src/index.js',
         external: ['uuid'],
         output: [
             {file: pkg.main, format: 'cjs'},

@@ -1,4 +1,4 @@
-import { default as durableStorage } from './durableStorage';
+import { default as durableStorage } from '../../src/storage/durableStorage';
 
 test('durable storage is valid', () => {
     const key = Math.random().toString();

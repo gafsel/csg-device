@@ -5,8 +5,8 @@ import {
     handleError,
     handleSuccess,
     requestCameras,
-} from './cameraHelpers';
-import CAMERA_ERRORS from "./cameraErrors";
+} from '../../src/camera/cameraHelpers';
+import CAMERA_ERRORS from "../../src/camera/cameraErrors";
 
 
 function mockMediaDevices(devices, config = {}) {

@@ -3,7 +3,7 @@ import {
     handleError
 } from './cameraHelpers';
 
-const CAMERA_SHOTS_PREFIX = "al-camera-shot_";
+const CAMERA_SHOTS_PREFIX = 'al-camera-shot_';
 
 export function addCameraShot(shotId, shot, { successCallback, errorCallback }) {
     try {

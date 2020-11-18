@@ -1,4 +1,4 @@
-import {default as CAMERA_ERRORS} from './cameraErrors';
+import {default as CAMERA_ERRORS} from '../../src/camera/cameraErrors';
 
 test('CAMERA_ERROR.isNoDeviceAvailable', () => {
     expect(CAMERA_ERRORS.isNoDeviceAvailable(CAMERA_ERRORS.noDeviceAvailable.code)).toBe(true);

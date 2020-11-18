@@ -1,4 +1,4 @@
-import {default as cameraStorage, addCameraShot} from './cameraStorage';
+import {default as cameraStorage, addCameraShot} from '../../src/camera/cameraStorage';
 
 test('cameraStorage is valid', () => {
     const id = Math.random().toString();

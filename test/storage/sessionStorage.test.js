@@ -1,4 +1,4 @@
-import { default as sessionStorage } from './sessionStorage';
+import { default as sessionStorage } from '../../src/storage/sessionStorage';
 
 test('session storage is valid', () => {
     const key = Math.random().toString();

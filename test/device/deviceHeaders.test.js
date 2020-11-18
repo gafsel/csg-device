@@ -1,6 +1,6 @@
-import {default as headers, DEVICE_ID_HEADER_NAME, DEVICE_INFO_HEADER_NAME} from './deviceHeaders';
-import {getDeviceId} from "./deviceStorage";
-import {default as deviceInfo} from './deviceInfo';
+import {default as headers, DEVICE_ID_HEADER_NAME, DEVICE_INFO_HEADER_NAME} from '../../src/device/deviceHeaders';
+import {getDeviceId} from "../../src/device/deviceStorage";
+import {default as deviceInfo} from '../../src/device/deviceInfo';
 
 test('headers contains id and info', async () => {
     const h = await headers.getDeviceHeaders();
